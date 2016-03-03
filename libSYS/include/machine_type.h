@@ -2,7 +2,7 @@
 /* -----------------------------------------------------------------------------------------------------------
 Software License for The Fraunhofer FDK AAC Codec Library for Android
 
-© Copyright  1995 - 2013 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+?Copyright  1995 - 2013 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
   All rights reserved.
 
  1.    INTRODUCTION
@@ -96,9 +96,14 @@ amm-info@iis.fraunhofer.de
 
 
 /* Library calling convention spec. __cdecl and friends might be added here as required. */
+#ifdef _MSC_VER
+  //#define LINKSPEC_H	extern "C"          __declspec(dllexport)
+  #define LINKSPEC_H	__declspec(dllexport)
+  #define LINKSPEC_CPP	__declspec(dllexport)
+#else
   #define LINKSPEC_H
   #define LINKSPEC_CPP
-
+#endif
 
 /**
  *  collate all corresponding compiler specific macros to detect a debug build, and set the DEBUG macro if that is the case.

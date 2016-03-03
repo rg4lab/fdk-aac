@@ -2,7 +2,7 @@
 /* -----------------------------------------------------------------------------------------------------------
 Software License for The Fraunhofer FDK AAC Codec Library for Android
 
-© Copyright  1995 - 2013 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+?Copyright  1995 - 2013 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
   All rights reserved.
 
  1.    INTRODUCTION
@@ -142,22 +142,14 @@ amm-info@iis.fraunhofer.de
 
 #include "FDK_tools_rom.h"
 
-  #include "aacdec_pns.h"
+#include "aacdec_pns.h"
 
-  #include "sbrdecoder.h"
-
-
-
-
-  #include "aacdec_hcr.h"
-  #include "rvlc.h"
-
+#include "sbrdecoder.h"
+#include "aacdec_hcr.h"
+#include "rvlc.h"
 
 #include "tpdec_lib.h"
-
 #include "conceal.h"
-
-
 
 #define CAN_DO_PS(aot) \
   ((aot) == AOT_AAC_LC \
@@ -173,6 +165,14 @@ amm-info@iis.fraunhofer.de
 #define IS_LOWDELAY(aot) \
   ((aot) == AOT_ER_AAC_LD \
 || (aot) == AOT_ER_AAC_ELD)
+
+#ifdef _MSC_VER
+#pragma comment(lib, "libSYS.lib")
+#pragma comment(lib, "libPCMutils.lib")
+#pragma comment(lib, "libMpegTPDec.lib")
+#pragma comment(lib, "libSBRDec.lib")
+#pragma comment(lib, "libFDK.lib")
+#endif
 
 void CAacDecoder_SyncQmfMode(HANDLE_AACDECODER self)
 {

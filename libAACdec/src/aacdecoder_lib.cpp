@@ -2,7 +2,7 @@
 /* -----------------------------------------------------------------------------------------------------------
 Software License for The Fraunhofer FDK AAC Codec Library for Android
 
-© Copyright  1995 - 2013 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+?Copyright  1995 - 2013 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
   All rights reserved.
 
  1.    INTRODUCTION
@@ -145,7 +145,7 @@ LINKSPEC_CPP AAC_DECODER_ERROR aacDecoder_GetFreeBytes ( const HANDLE_AACDECODER
 /**
  * Config Decoder using a CSAudioSpecificConfig struct.
  */
-static
+//static
 LINKSPEC_CPP AAC_DECODER_ERROR aacDecoder_Config(HANDLE_AACDECODER self, const CSAudioSpecificConfig *pAscStruct)
 {
   AAC_DECODER_ERROR err;
